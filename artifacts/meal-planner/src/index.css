@@ -142,3 +142,61 @@ button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visib
   .modal-backdrop { align-items: center; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; scroll-behavior: auto !important; } }
+
+/* Prato a Prato — a sunlit kitchen notebook */
+:root {
+  --background: 88 30% 96%;
+  --foreground: 147 22% 18%;
+  --border: 98 18% 84%;
+  --input: 98 18% 84%;
+  --ring: 145 31% 39%;
+  --card: 70 33% 99%;
+  --card-foreground: 147 22% 18%;
+  --card-border: 98 22% 89%;
+  --popover: 70 33% 99%;
+  --popover-foreground: 147 22% 18%;
+  --primary: 145 31% 35%;
+  --primary-foreground: 0 0% 100%;
+  --secondary: 104 29% 91%;
+  --secondary-foreground: 150 27% 24%;
+  --muted: 100 19% 93%;
+  --muted-foreground: 145 10% 44%;
+  --accent: 42 60% 89%;
+  --accent-foreground: 36 36% 26%;
+  --destructive: 4 57% 48%;
+  --destructive-foreground: 0 0% 100%;
+  --app-font-sans: 'DM Sans', sans-serif;
+  --app-font-serif: 'Fraunces', Georgia, serif;
+}
+.dark {
+  --background: 151 20% 11%; --foreground: 90 23% 92%; --border: 148 13% 25%;
+  --input: 148 13% 25%; --ring: 140 31% 56%; --card: 151 18% 15%;
+  --card-foreground: 90 23% 92%; --card-border: 148 13% 25%; --popover: 151 18% 15%;
+  --popover-foreground: 90 23% 92%; --primary: 140 31% 56%; --primary-foreground: 151 20% 11%;
+  --secondary: 151 14% 23%; --secondary-foreground: 90 23% 92%; --muted: 151 14% 21%;
+  --muted-foreground: 105 12% 67%; --accent: 38 32% 25%; --accent-foreground: 43 53% 87%;
+  --destructive: 4 55% 55%; --destructive-foreground: 0 0% 100%;
+}
+.page-wrap { width: min(100% - 32px, 1080px); }
+.nav-dock-inner { grid-template-columns: repeat(4,1fr); }
+.nav-item { white-space: nowrap; }
+.app-shell { background: radial-gradient(ellipse at 92% 2%, rgba(222,235,211,.48), transparent 32rem), hsl(var(--background)); }
+.topbar { background: rgba(248,250,244,.88); }
+.proposal-banner { background: linear-gradient(120deg, #e7f0e2, #f5f1df 75%); border: 1px solid #dce8d5; }
+.step-chip { border: 1px solid #dbe5d5; background: #f8faf5; color: #748372; }
+.step-chip.current { border-color: #557a57; background: #557a57; color: white; }
+.choice-chip { display: inline-flex; align-items: center; gap: 8px; min-height: 42px; border: 1px solid #dce4d8; border-radius: 999px; background: #fff; padding: 8px 14px; color: #516253; font-size: .88rem; font-weight: 600; transition: .18s ease; }
+.choice-chip:hover { background: #f4f7ef; border-color: #aabb9f; }
+.choice-chip.selected { border-color: #6a8d64; background: #e8f1e3; color: #365a3c; box-shadow: inset 0 0 0 1px #6a8d64; }
+.week-slot { min-height: 112px; }
+.price-tag { border-radius: 999px; background: #f6f1df; color: #786942; font-variant-numeric: tabular-nums; }
+.subtle-line { border-color: #e8ede3; }
+.safety-note { border-left: 3px solid #c6a56a; background: #f8f3e6; }
+.onboarding-shell { min-height: 100dvh; background: radial-gradient(ellipse at 0% 10%, #e6efdf 0, transparent 36%), hsl(var(--background)); }
+.onboarding-card { width: min(100%, 760px); border: 1px solid #e4eadf; border-radius: 28px; background: rgba(255,255,251,.92); box-shadow: 0 22px 70px rgba(48,71,48,.09); }
+.profile-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 10px; }
+@media (max-width: 520px) {
+  .page-wrap { width: min(100% - 24px, 1080px); }
+  .profile-grid { grid-template-columns: 1fr; }
+  .onboarding-card { border-radius: 22px; }
+}

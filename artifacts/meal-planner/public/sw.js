@@ -1,9 +1,16 @@
-const CACHE_NAME = 'prato-a-prato-shell-v1';
+const CACHE_NAME = 'prato-a-prato-shell-v2';
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
     const cache = await caches.open(CACHE_NAME);
     const base = new URL('./', self.registration.scope);
-    await cache.addAll([base.href, new URL('manifest.webmanifest', base).href, new URL('icons/icon.svg', base).href]);
+    await cache.addAll([
+      base.href,
+      new URL('manifest.webmanifest', base).href,
+      new URL('icons/icon.svg', base).href,
+      new URL('icons/icon-192.png', base).href,
+      new URL('icons/icon-512.png', base).href,
+      new URL('icons/apple-touch-icon.png', base).href,
+    ]);
     await self.skipWaiting();
   })());
 });
